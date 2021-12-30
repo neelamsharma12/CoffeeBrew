@@ -15,6 +15,5 @@ class StartUpViewController: UIViewController {
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Dark Roasted Beans", textColor: UIColor.black)
     }
 
-   
 }
 

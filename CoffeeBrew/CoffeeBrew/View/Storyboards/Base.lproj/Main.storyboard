@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setup" translatesAutoresizingMaskIntoConstraints="NO" id="GN4-LW-8nv">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startup" translatesAutoresizingMaskIntoConstraints="NO" id="GN4-LW-8nv">
                                 <rect key="frame" x="0.0" y="193" width="414" height="410"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="410" id="Pv3-Nt-zFJ"/>
@@ -88,7 +88,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="setup" width="125" height="136.66667175292969"/>
+        <image name="startup" width="375" height="410"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
