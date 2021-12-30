@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		AE59D932277D91F7009BFCE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D931277D91F7009BFCE4 /* AppDelegate.swift */; };
 		AE59D934277D91F7009BFCE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D933277D91F7009BFCE4 /* SceneDelegate.swift */; };
-		AE59D936277D91F7009BFCE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D935277D91F7009BFCE4 /* ViewController.swift */; };
+		AE59D936277D91F7009BFCE4 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D935277D91F7009BFCE4 /* StartUpViewController.swift */; };
 		AE59D939277D91F7009BFCE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE59D937277D91F7009BFCE4 /* Main.storyboard */; };
 		AE59D93B277D91F8009BFCE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE59D93A277D91F8009BFCE4 /* Assets.xcassets */; };
 		AE59D93E277D91F8009BFCE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE59D93C277D91F8009BFCE4 /* LaunchScreen.storyboard */; };
 		AE59D949277D91F8009BFCE4 /* CoffeeBrewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D948277D91F8009BFCE4 /* CoffeeBrewTests.swift */; };
 		AE59D953277D91F8009BFCE4 /* CoffeeBrewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D952277D91F8009BFCE4 /* CoffeeBrewUITests.swift */; };
+		AE59D967277D9BD4009BFCE4 /* CustomizeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D966277D9BD4009BFCE4 /* CustomizeNavBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		AE59D92E277D91F7009BFCE4 /* CoffeeBrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeBrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE59D931277D91F7009BFCE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE59D933277D91F7009BFCE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE59D935277D91F7009BFCE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE59D935277D91F7009BFCE4 /* StartUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpViewController.swift; sourceTree = "<group>"; };
 		AE59D938277D91F7009BFCE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE59D93A277D91F8009BFCE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE59D93D277D91F8009BFCE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		AE59D948277D91F8009BFCE4 /* CoffeeBrewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBrewTests.swift; sourceTree = "<group>"; };
 		AE59D94E277D91F8009BFCE4 /* CoffeeBrewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeBrewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE59D952277D91F8009BFCE4 /* CoffeeBrewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBrewUITests.swift; sourceTree = "<group>"; };
+		AE59D966277D9BD4009BFCE4 /* CustomizeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeNavBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,12 @@
 		AE59D930277D91F7009BFCE4 /* CoffeeBrew */ = {
 			isa = PBXGroup;
 			children = (
+				AE59D964277D9B36009BFCE4 /* Util */,
+				AE59D962277D92B3009BFCE4 /* View */,
+				AE59D961277D9299009BFCE4 /* ViewController */,
 				AE59D931277D91F7009BFCE4 /* AppDelegate.swift */,
 				AE59D933277D91F7009BFCE4 /* SceneDelegate.swift */,
-				AE59D935277D91F7009BFCE4 /* ViewController.swift */,
-				AE59D937277D91F7009BFCE4 /* Main.storyboard */,
 				AE59D93A277D91F8009BFCE4 /* Assets.xcassets */,
-				AE59D93C277D91F8009BFCE4 /* LaunchScreen.storyboard */,
 				AE59D93F277D91F8009BFCE4 /* Info.plist */,
 			);
 			path = CoffeeBrew;
@@ -122,6 +124,47 @@
 				AE59D952277D91F8009BFCE4 /* CoffeeBrewUITests.swift */,
 			);
 			path = CoffeeBrewUITests;
+			sourceTree = "<group>";
+		};
+		AE59D961277D9299009BFCE4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE59D935277D91F7009BFCE4 /* StartUpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AE59D962277D92B3009BFCE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE59D963277D92C1009BFCE4 /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AE59D963277D92C1009BFCE4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AE59D937277D91F7009BFCE4 /* Main.storyboard */,
+				AE59D93C277D91F8009BFCE4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AE59D964277D9B36009BFCE4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AE59D965277D9BAB009BFCE4 /* CustomizeNavBar */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AE59D965277D9BAB009BFCE4 /* CustomizeNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				AE59D966277D9BD4009BFCE4 /* CustomizeNavBar.swift */,
+			);
+			path = CustomizeNavBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE59D936277D91F7009BFCE4 /* ViewController.swift in Sources */,
+				AE59D936277D91F7009BFCE4 /* StartUpViewController.swift in Sources */,
+				AE59D967277D9BD4009BFCE4 /* CustomizeNavBar.swift in Sources */,
 				AE59D932277D91F7009BFCE4 /* AppDelegate.swift in Sources */,
 				AE59D934277D91F7009BFCE4 /* SceneDelegate.swift in Sources */,
 			);
