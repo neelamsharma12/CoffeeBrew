@@ -7,8 +7,12 @@
 
 import UIKit
 
+/// This class is used to customize the navigation bar
 class CustomizeNavBar {
     
+    // MARK: - Utility methods
+    
+    /// This method is for left aligning the navigation view title 
     func setLeftAlignTitleView(controller: UIViewController, font: UIFont?, text: String, textColor: UIColor) {
         guard let font = font, let navFrame = controller.navigationController?.navigationBar.frame else {
             return

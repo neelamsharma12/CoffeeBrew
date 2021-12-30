@@ -16,6 +16,7 @@
 		AE59D949277D91F8009BFCE4 /* CoffeeBrewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D948277D91F8009BFCE4 /* CoffeeBrewTests.swift */; };
 		AE59D953277D91F8009BFCE4 /* CoffeeBrewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D952277D91F8009BFCE4 /* CoffeeBrewUITests.swift */; };
 		AE59D967277D9BD4009BFCE4 /* CustomizeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D966277D9BD4009BFCE4 /* CustomizeNavBar.swift */; };
+		AE59D969277E1611009BFCE4 /* StyleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D968277E1611009BFCE4 /* StyleSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AE59D94E277D91F8009BFCE4 /* CoffeeBrewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeBrewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE59D952277D91F8009BFCE4 /* CoffeeBrewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBrewUITests.swift; sourceTree = "<group>"; };
 		AE59D966277D9BD4009BFCE4 /* CustomizeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeNavBar.swift; sourceTree = "<group>"; };
+		AE59D968277E1611009BFCE4 /* StyleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		AE59D930277D91F7009BFCE4 /* CoffeeBrew */ = {
 			isa = PBXGroup;
 			children = (
+				AE59D96A277E324E009BFCE4 /* ViewModel */,
 				AE59D964277D9B36009BFCE4 /* Util */,
 				AE59D962277D92B3009BFCE4 /* View */,
 				AE59D961277D9299009BFCE4 /* ViewController */,
@@ -130,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AE59D935277D91F7009BFCE4 /* StartUpViewController.swift */,
+				AE59D968277E1611009BFCE4 /* StyleSelectionViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -165,6 +169,13 @@
 				AE59D966277D9BD4009BFCE4 /* CustomizeNavBar.swift */,
 			);
 			path = CustomizeNavBar;
+			sourceTree = "<group>";
+		};
+		AE59D96A277E324E009BFCE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				AE59D936277D91F7009BFCE4 /* StartUpViewController.swift in Sources */,
 				AE59D967277D9BD4009BFCE4 /* CustomizeNavBar.swift in Sources */,
 				AE59D932277D91F7009BFCE4 /* AppDelegate.swift in Sources */,
+				AE59D969277E1611009BFCE4 /* StyleSelectionViewController.swift in Sources */,
 				AE59D934277D91F7009BFCE4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

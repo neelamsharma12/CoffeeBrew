@@ -7,13 +7,28 @@
 
 import UIKit
 
+/// This class is used to set up the start up view 
 class StartUpViewController: UIViewController {
 
+    // MARK: - IBOutlet declaration
+    @IBOutlet weak var linkLabel: UILabel!
+    
+    // MARK: - UIViewController LifeCycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Dark Roasted Beans", textColor: UIColor.black)
+        setupLabelTap()
+    }
+    
+    private func setupLabelTap() {
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.labelTapped(_:)))
+        linkLabel.isUserInteractionEnabled = true
+        linkLabel.addGestureRecognizer(labelTap)
+    }
+    
+    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "showSelectionStyles", sender: nil)
     }
 
 }
-
