@@ -106,11 +106,75 @@
                     <navigationItem key="navigationItem" id="8gz-it-0nZ"/>
                     <connections>
                         <outlet property="styleSelectionListTableView" destination="dLs-fB-P9A" id="BOn-3t-iVp"/>
+                        <segue destination="VTG-cc-Zk4" kind="show" identifier="showSizeSelection" id="Zya-ol-BxK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3By-l6-85V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1813.0434782608697" y="139.95535714285714"/>
+        </scene>
+        <!--Sizes View Controller-->
+        <scene sceneID="8au-GR-3su">
+            <objects>
+                <viewController id="VTG-cc-Zk4" customClass="SizesViewController" customModule="CoffeeBrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mks-3o-And">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0UB-EW-Lot">
+                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CvH-Yl-Vw8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CvH-Yl-Vw8" firstAttribute="trailing" secondItem="0UB-EW-Lot" secondAttribute="trailing" id="NG3-xg-tTl"/>
+                            <constraint firstItem="0UB-EW-Lot" firstAttribute="top" secondItem="CvH-Yl-Vw8" secondAttribute="top" constant="16" id="PWT-ka-bfU"/>
+                            <constraint firstAttribute="bottom" secondItem="0UB-EW-Lot" secondAttribute="bottom" id="mmB-6i-Anh"/>
+                            <constraint firstItem="0UB-EW-Lot" firstAttribute="leading" secondItem="CvH-Yl-Vw8" secondAttribute="leading" id="tgs-rr-AWc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zBt-2a-nmf"/>
+                    <connections>
+                        <outlet property="sizeSelectionListTableView" destination="0UB-EW-Lot" id="kNT-UR-3PW"/>
+                        <segue destination="Hmm-et-1OK" kind="show" identifier="showExtrasSelection" id="pG8-UP-baF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCi-js-6pR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2766.666666666667" y="139.95535714285714"/>
+        </scene>
+        <!--Extras View Controller-->
+        <scene sceneID="DsU-tm-fBk">
+            <objects>
+                <viewController id="Hmm-et-1OK" customClass="ExtrasViewController" customModule="CoffeeBrew" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cr3-kK-w1q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KhS-Lp-MIb">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rN4-lk-yKO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KhS-Lp-MIb" firstAttribute="top" secondItem="rN4-lk-yKO" secondAttribute="top" constant="16" id="EG4-Sq-Sxa"/>
+                            <constraint firstItem="rN4-lk-yKO" firstAttribute="bottom" secondItem="KhS-Lp-MIb" secondAttribute="bottom" id="SgC-mL-qKA"/>
+                            <constraint firstItem="rN4-lk-yKO" firstAttribute="trailing" secondItem="KhS-Lp-MIb" secondAttribute="trailing" id="bnc-ZC-tpa"/>
+                            <constraint firstItem="KhS-Lp-MIb" firstAttribute="leading" secondItem="rN4-lk-yKO" secondAttribute="leading" id="gh0-pp-oex"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k79-ng-VCk"/>
+                    <connections>
+                        <outlet property="extrasSelectionListTableView" destination="KhS-Lp-MIb" id="a3p-pw-Bfe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeO-pn-Epp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3606" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dt5-i5-w6M">

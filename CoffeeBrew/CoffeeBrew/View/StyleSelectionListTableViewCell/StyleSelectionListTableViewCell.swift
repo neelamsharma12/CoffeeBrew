@@ -26,6 +26,13 @@ class StyleSelectionListTableViewCell: UITableViewCell, ReusableCell {
             leadingConstraint.constant = -44
         }
     }
+    
+    func setDataForSize(_ sizeName: String?, images: [String: String]?) {
+        nameLabel?.text = sizeName
+        if let size = sizeName, let img = images?[size] {
+            iconImageView?.image = UIImage(named: img)
+        }
+    }
 
     // MARK: - UITableViewCell selection methods
     override func setSelected(_ selected: Bool, animated: Bool) {
