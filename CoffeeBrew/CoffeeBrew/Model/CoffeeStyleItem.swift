@@ -11,13 +11,15 @@ import Foundation
 public struct CoffeeStyleItem {
 
     let types: [CoffeeTypes]
+    let sizes: [CoffeeSizes]
+    let extras: [Extras]
 
 }
 
 extension CoffeeStyleItem: Decodable {
     
     enum CodingKeys: String, CodingKey {
-        case types
+        case types, sizes, extras
     }
 
 }

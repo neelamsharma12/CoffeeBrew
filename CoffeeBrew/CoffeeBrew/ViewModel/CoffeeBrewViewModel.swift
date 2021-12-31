@@ -17,6 +17,8 @@ final class CoffeeBrewViewModel {
     
     private var session: CoffeeBrewSession
     private weak var delegate: CoffeeBrewViewModelDelegate?
+    var styleSelectionList: CoffeeStyleItem?
+    var styleselectionImages = ["Espresso": "espresso", "Cappuccino": "cappuchino", "Lungo": "large"]
 
     init(sessionProvider: CoffeeBrewSession, delegate: CoffeeBrewViewModelDelegate? = nil) {
         self.session = sessionProvider
@@ -27,6 +29,7 @@ final class CoffeeBrewViewModel {
         session.loadCoffeeStyleListData(withID: "60ba1ab72e35f2d9c786c610") { result in
             switch result {
             case .success(let coffeeStyleList):
+                self.styleSelectionList = coffeeStyleList
                 self.delegate?.didLoadCoffeeStyleList(coffeeStyleListData: coffeeStyleList)
             case .failure(let error):
                 self.delegate?.didFailLoadingCoffeeStyleList(error)

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "setup-1.png",
+      "filename" : "cappuchino@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "setup@2x.png",
+      "filename" : "cappuchino@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "startup@3x.png",
+      "filename" : "cappuchino@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

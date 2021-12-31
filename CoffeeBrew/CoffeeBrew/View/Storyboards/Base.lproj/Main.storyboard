@@ -86,16 +86,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dLs-fB-P9A">
+                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HyY-xG-Oi8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dLs-fB-P9A" secondAttribute="bottom" id="9Lq-6O-a1E"/>
                             <constraint firstItem="nNy-0Q-pKT" firstAttribute="leading" secondItem="HyY-xG-Oi8" secondAttribute="leading" constant="16" id="FAE-ik-HTA"/>
                             <constraint firstItem="HyY-xG-Oi8" firstAttribute="trailing" secondItem="nNy-0Q-pKT" secondAttribute="trailing" constant="28" id="Gbk-Ca-nux"/>
+                            <constraint firstItem="dLs-fB-P9A" firstAttribute="top" secondItem="nNy-0Q-pKT" secondAttribute="bottom" constant="16" id="MMd-EZ-MtG"/>
+                            <constraint firstItem="dLs-fB-P9A" firstAttribute="leading" secondItem="HyY-xG-Oi8" secondAttribute="leading" id="cv3-L0-Sdv"/>
                             <constraint firstItem="nNy-0Q-pKT" firstAttribute="top" secondItem="HyY-xG-Oi8" secondAttribute="top" constant="2" id="gpz-ez-WDu"/>
+                            <constraint firstItem="dLs-fB-P9A" firstAttribute="trailing" secondItem="HyY-xG-Oi8" secondAttribute="trailing" id="tw8-Ky-Pnd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8gz-it-0nZ"/>
+                    <connections>
+                        <outlet property="styleSelectionListTableView" destination="dLs-fB-P9A" id="BOn-3t-iVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3By-l6-85V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

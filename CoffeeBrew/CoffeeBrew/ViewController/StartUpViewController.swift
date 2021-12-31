@@ -21,6 +21,7 @@ class StartUpViewController: UIViewController {
         setupLabelTap()
     }
     
+    // MARK: - Private methods
     private func setupLabelTap() {
         let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.labelTapped(_:)))
         linkLabel.isUserInteractionEnabled = true
