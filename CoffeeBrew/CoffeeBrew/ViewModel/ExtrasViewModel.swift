@@ -10,24 +10,20 @@ import Foundation
 /// This class contains business logic for Extras Selection viewcontroller class
 final class ExtrasViewModel {
 
-    var styleSelectionImages = ["Select the amount of sugar": "milk", "Select type of milk": "cappuchino"]
+    var extrasSelectionImages = ["Select the amount of sugar": "cappuchino", "Select type of milk": "milk"]
 
-    func getExtrasList(_ coffeeTypes: CoffeeTypes?, coffeeStyles: CoffeeStyleItem?) -> [String] {
-        var extrasList = [String]()
+    func getExtrasList(_ coffeeTypes: CoffeeTypes?, coffeeStyles: CoffeeStyleItem?) -> [[String: [String]]] {
+        var extrasWithValues = [[String: [String]]]()
         if let extras = coffeeTypes?.extras, let extrasDict = convertCoffeeExtrasIntoDict(coffeeStyles?.extras) {
             for id in extras {
                 if let name = extrasDict[id] {
-                    for key in name.keys {
-                        if !extrasList.contains(key) {
-                            extrasList.append(key)
-                        }
-                    }
+                    extrasWithValues += convertExtraArrayIntoDictionary(extras: name)
                 }
             }
         }
-        return extrasList
+        return extrasWithValues
     }
-   
+
     private func convertCoffeeExtrasIntoDict(_ extras: [Extras]?) -> [String: [String: [Subselections]]]? {
         guard let extras = extras else {
             return nil
@@ -37,5 +33,37 @@ final class ExtrasViewModel {
             extrasDict[item.id] = [item.name: item.subselections]
         }
         return extrasDict
+    }
+
+    private func convertExtraArrayIntoDictionary(extras: [String: [Subselections]]) -> [[String: [String]]] {
+        var extrasDict = [[String: [String]]]()
+        
+        for extra in extras {
+            var extraValues = [String]()
+            for value in extra.value {
+                extraValues.append(value.name)
+            }
+            extrasDict.append([extra.key: extraValues])
+        }
+        return extrasDict
+    }
+
+    func getSections(_ extrasList: [[String: [String]]]) -> [Section]? {
+        var sectionsData = [Section]()
+        for item in extrasList {
+            guard let name = item.keys.first else {
+                return nil
+            }
+            var itemList = [Item]()
+            for extraValue in item.values {
+                for value in extraValue {
+                    let item = Item(name: value, detail: "")
+                    itemList.append(item)
+                }
+            }
+            let section = Section(name: name, items: itemList, collapsed: true)
+            sectionsData.append(section)
+        }
+        return sectionsData
     }
 }

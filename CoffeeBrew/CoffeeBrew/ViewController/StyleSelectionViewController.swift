@@ -84,6 +84,7 @@ extension StyleSelectionViewController: UITableViewDelegate {
             performSegue(withIdentifier: "showSizeSelection", sender: selectedStyle)
         }
     }
+
 }
 
 // MARK: - CoffeeBrewViewModelDelegate Delegate methods
@@ -99,5 +100,5 @@ extension StyleSelectionViewController: CoffeeBrewViewModelDelegate {
     func didFailLoadingCoffeeStyleList(_ error: Error) {
         debugPrint(error)
     }
-    
+
 }

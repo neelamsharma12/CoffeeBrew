@@ -10,7 +10,7 @@ import Foundation
 /// This class contains business logic for Size Selection viewcontroller class
 final class SizeViewModel {
 
-    var styleSelectionImages = ["Large": "large", "Venti": "small", "Tall": "medium"]
+    var sizeSelectionImages = ["Large": "large", "Venti": "small", "Tall": "medium"]
 
     func getSizeList(_ coffeeTypes: CoffeeTypes?, coffeeStyles: CoffeeStyleItem?) -> [String] {
         var coffeeSizes = [String]()

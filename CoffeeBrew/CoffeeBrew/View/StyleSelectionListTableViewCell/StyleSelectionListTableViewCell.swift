@@ -33,6 +33,13 @@ class StyleSelectionListTableViewCell: UITableViewCell, ReusableCell {
             iconImageView?.image = UIImage(named: img)
         }
     }
+    
+    func setDataForExtras(_ extraName: [String: [String]]?, images: [String: String]?) {
+        nameLabel?.text = extraName?.keys.first
+        if let extra = extraName?.keys.first, let img = images?[extra] {
+            iconImageView?.image = UIImage(named: img)
+        }
+    }
 
     // MARK: - UITableViewCell selection methods
     override func setSelected(_ selected: Bool, animated: Bool) {

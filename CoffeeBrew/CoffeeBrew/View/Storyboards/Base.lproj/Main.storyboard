@@ -78,16 +78,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNy-0Q-pKT">
-                                <rect key="frame" x="16" y="90" width="370" height="21"/>
+                                <rect key="frame" x="16" y="90" width="370" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="zSl-1U-q7V"/>
+                                    <constraint firstAttribute="height" constant="29" id="zSl-1U-q7V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dLs-fB-P9A">
-                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -97,7 +97,7 @@
                             <constraint firstAttribute="bottom" secondItem="dLs-fB-P9A" secondAttribute="bottom" id="9Lq-6O-a1E"/>
                             <constraint firstItem="nNy-0Q-pKT" firstAttribute="leading" secondItem="HyY-xG-Oi8" secondAttribute="leading" constant="16" id="FAE-ik-HTA"/>
                             <constraint firstItem="HyY-xG-Oi8" firstAttribute="trailing" secondItem="nNy-0Q-pKT" secondAttribute="trailing" constant="28" id="Gbk-Ca-nux"/>
-                            <constraint firstItem="dLs-fB-P9A" firstAttribute="top" secondItem="nNy-0Q-pKT" secondAttribute="bottom" constant="16" id="MMd-EZ-MtG"/>
+                            <constraint firstItem="dLs-fB-P9A" firstAttribute="top" secondItem="nNy-0Q-pKT" secondAttribute="bottom" constant="13" id="MMd-EZ-MtG"/>
                             <constraint firstItem="dLs-fB-P9A" firstAttribute="leading" secondItem="HyY-xG-Oi8" secondAttribute="leading" id="cv3-L0-Sdv"/>
                             <constraint firstItem="nNy-0Q-pKT" firstAttribute="top" secondItem="HyY-xG-Oi8" secondAttribute="top" constant="2" id="gpz-ez-WDu"/>
                             <constraint firstItem="dLs-fB-P9A" firstAttribute="trailing" secondItem="HyY-xG-Oi8" secondAttribute="trailing" id="tw8-Ky-Pnd"/>
@@ -122,15 +122,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0UB-EW-Lot">
-                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="767"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvw-PL-oOd">
+                                <rect key="frame" x="16" y="90" width="370" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="z12-ex-d3d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CvH-Yl-Vw8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Gvw-PL-oOd" firstAttribute="top" secondItem="CvH-Yl-Vw8" secondAttribute="top" constant="2" id="EbC-1F-bzW"/>
+                            <constraint firstItem="Gvw-PL-oOd" firstAttribute="leading" secondItem="CvH-Yl-Vw8" secondAttribute="leading" constant="16" id="MQr-U6-ga1"/>
                             <constraint firstItem="CvH-Yl-Vw8" firstAttribute="trailing" secondItem="0UB-EW-Lot" secondAttribute="trailing" id="NG3-xg-tTl"/>
-                            <constraint firstItem="0UB-EW-Lot" firstAttribute="top" secondItem="CvH-Yl-Vw8" secondAttribute="top" constant="16" id="PWT-ka-bfU"/>
+                            <constraint firstItem="CvH-Yl-Vw8" firstAttribute="trailing" secondItem="Gvw-PL-oOd" secondAttribute="trailing" constant="28" id="PYf-mu-7ve"/>
+                            <constraint firstItem="0UB-EW-Lot" firstAttribute="top" secondItem="Gvw-PL-oOd" secondAttribute="bottom" constant="18" id="To6-Te-AVm"/>
                             <constraint firstAttribute="bottom" secondItem="0UB-EW-Lot" secondAttribute="bottom" id="mmB-6i-Anh"/>
                             <constraint firstItem="0UB-EW-Lot" firstAttribute="leading" secondItem="CvH-Yl-Vw8" secondAttribute="leading" id="tgs-rr-AWc"/>
                         </constraints>
@@ -138,43 +150,11 @@
                     <navigationItem key="navigationItem" id="zBt-2a-nmf"/>
                     <connections>
                         <outlet property="sizeSelectionListTableView" destination="0UB-EW-Lot" id="kNT-UR-3PW"/>
-                        <segue destination="Hmm-et-1OK" kind="show" identifier="showExtrasSelection" id="pG8-UP-baF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCi-js-6pR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2766.666666666667" y="139.95535714285714"/>
-        </scene>
-        <!--Extras View Controller-->
-        <scene sceneID="DsU-tm-fBk">
-            <objects>
-                <viewController id="Hmm-et-1OK" customClass="ExtrasViewController" customModule="CoffeeBrew" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cr3-kK-w1q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KhS-Lp-MIb">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="rN4-lk-yKO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="KhS-Lp-MIb" firstAttribute="top" secondItem="rN4-lk-yKO" secondAttribute="top" constant="16" id="EG4-Sq-Sxa"/>
-                            <constraint firstItem="rN4-lk-yKO" firstAttribute="bottom" secondItem="KhS-Lp-MIb" secondAttribute="bottom" id="SgC-mL-qKA"/>
-                            <constraint firstItem="rN4-lk-yKO" firstAttribute="trailing" secondItem="KhS-Lp-MIb" secondAttribute="trailing" id="bnc-ZC-tpa"/>
-                            <constraint firstItem="KhS-Lp-MIb" firstAttribute="leading" secondItem="rN4-lk-yKO" secondAttribute="leading" id="gh0-pp-oex"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="k79-ng-VCk"/>
-                    <connections>
-                        <outlet property="extrasSelectionListTableView" destination="KhS-Lp-MIb" id="a3p-pw-Bfe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FeO-pn-Epp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3606" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dt5-i5-w6M">
