@@ -8,7 +8,7 @@
 import Foundation
 
 /// This class contains business logic for Extras Selection viewcontroller class
-final class ExtrasViewModel {
+final class ExtrasSelectionViewModel {
 
     var extrasSelectionImages = ["Select the amount of sugar": "cappuchino", "Select type of milk": "milk"]
 

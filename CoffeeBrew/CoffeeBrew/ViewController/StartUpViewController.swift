@@ -8,7 +8,7 @@
 import UIKit
 
 /// This class is used to set up the start up view 
-class StartUpViewController: UIViewController {
+final class StartUpViewController: UIViewController {
 
     // MARK: - IBOutlet declaration
     @IBOutlet weak var linkLabel: UILabel!

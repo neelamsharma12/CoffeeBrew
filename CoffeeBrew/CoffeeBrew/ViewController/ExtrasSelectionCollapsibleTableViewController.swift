@@ -8,13 +8,13 @@
 import UIKit
 
 /// This class is used to select the Extras for the coffee
-class ExtrasCollapsibleTableViewController: UITableViewController {
+final class ExtrasSelectionCollapsibleTableViewController: UITableViewController {
 
     // MARK: - variable declaration
     var selectedCoffeeType: CoffeeType?
     var selectedCoffeeSize: String?
     var styleSelectionList: CoffeeStyleItem?
-    var viewModel: ExtrasViewModel?
+    var viewModel: ExtrasSelectionViewModel?
     var extrasList = [[String: [String]]]()
     var sectionsData = [Section]()
     var selectedExtras = Array<Dictionary<String, [Item]>>()
@@ -28,7 +28,7 @@ class ExtrasCollapsibleTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Brew with Lex", textColor: UIColor.black)
-        viewModel = ExtrasViewModel()
+        viewModel = ExtrasSelectionViewModel()
         guard let extrasList = viewModel?.getExtrasList(selectedCoffeeType, coffeeStyles: styleSelectionList) else {
             return
         }
@@ -149,7 +149,7 @@ class ExtrasCollapsibleTableViewController: UITableViewController {
 
 // MARK: - Section Header Delegate
 //
-extension ExtrasCollapsibleTableViewController: CollapsibleTableViewHeaderDelegate {
+extension ExtrasSelectionCollapsibleTableViewController: CollapsibleTableViewHeaderDelegate {
 
     func toggleSection(_ header: CollapsibleTableViewHeader, section: Int) {
         let currentSection = section == 0 ? 0 : section - 1

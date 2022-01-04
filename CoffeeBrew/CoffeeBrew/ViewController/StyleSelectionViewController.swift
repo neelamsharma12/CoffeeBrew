@@ -8,18 +8,18 @@
 import UIKit
 
 /// This class is used to select the coffee style
-class StyleSelectionViewController: UIViewController {
+final class StyleSelectionViewController: UIViewController {
 
     // MARK: - IBOutlet declaration
     @IBOutlet weak var styleSelectionListTableView: UITableView!
 
     // MARK: - variable declaration
-    private var viewModel: CoffeeBrewViewModel?
+    private var viewModel: StyleSelectionViewModel?
 
     // MARK: - UIViewController LifeCycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = CoffeeBrewViewModel(sessionProvider: ApplicationHost.init().coffeeBrewSession, delegate: self)
+        viewModel = StyleSelectionViewModel(sessionProvider: ApplicationHost.init().coffeeBrewSession, delegate: self)
         viewModel?.getCoffeeStyleList()
         navigationItem.hidesBackButton = true
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Brew with Lex", textColor: UIColor.black)
@@ -41,7 +41,7 @@ class StyleSelectionViewController: UIViewController {
             guard let coffeeTypes = sender as? CoffeeType, let selectedStyles = viewModel?.styleSelectionList else {
                 return
             }
-            guard let destinationViewController = segue.destination as? SizesViewController else {
+            guard let destinationViewController = segue.destination as? SizesSelectionViewController else {
                 return
             }
             destinationViewController.styleSelectionList = selectedStyles
@@ -88,7 +88,7 @@ extension StyleSelectionViewController: UITableViewDelegate {
 }
 
 // MARK: - CoffeeBrewViewModelDelegate Delegate methods
-extension StyleSelectionViewController: CoffeeBrewViewModelDelegate {
+extension StyleSelectionViewController: StyleSelectionViewModelDelegate {
 
     func didLoadCoffeeStyleList(coffeeStyleListData: CoffeeStyleItem) {
         debugPrint(coffeeStyleListData)

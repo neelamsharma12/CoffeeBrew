@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol CoffeeBrewViewModelDelegate: AnyObject {
+protocol StyleSelectionViewModelDelegate: AnyObject {
     func didLoadCoffeeStyleList(coffeeStyleListData: CoffeeStyleItem)
     func didFailLoadingCoffeeStyleList(_ error: Error)
 }
 
 /// This class contains business logic for Style Selection viewcontroller class
-final class CoffeeBrewViewModel {
+final class StyleSelectionViewModel {
     
     private var session: CoffeeBrewSession
-    private weak var delegate: CoffeeBrewViewModelDelegate?
+    private weak var delegate: StyleSelectionViewModelDelegate?
     var styleSelectionList: CoffeeStyleItem?
     var styleselectionImages = ["Espresso": "espresso", "Cappuccino": "cappuchino", "Lungo": "large"]
 
-    init(sessionProvider: CoffeeBrewSession, delegate: CoffeeBrewViewModelDelegate? = nil) {
+    init(sessionProvider: CoffeeBrewSession, delegate: StyleSelectionViewModelDelegate? = nil) {
         self.session = sessionProvider
         self.delegate = delegate
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 /// This class contains business logic for Size Selection viewcontroller class
-final class SizeViewModel {
+final class SizeSelectionViewModel {
 
     var sizeSelectionImages = ["Large": "large", "Venti": "small", "Tall": "medium"]
 

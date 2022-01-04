@@ -8,7 +8,7 @@
 import UIKit
 
 /// This class is used to select the size of the coffee
-class SizesViewController: UIViewController {
+final class SizesSelectionViewController: UIViewController {
     
     // MARK: - IBOutlet declaration
     @IBOutlet weak var sizeSelectionListTableView: UITableView!
@@ -16,13 +16,13 @@ class SizesViewController: UIViewController {
     // MARK: - variable declaration
     var selectedCoffeeType: CoffeeType?
     var styleSelectionList: CoffeeStyleItem?
-    var viewModel: SizeViewModel?
+    var viewModel: SizeSelectionViewModel?
     
     // MARK: - UIViewController LifeCycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Brew with Lex", textColor: UIColor.black)
-        viewModel = SizeViewModel()
+        viewModel = SizeSelectionViewModel()
         cellRegistration()
         sizeSelectionListTableView.reloadData()
     }
@@ -39,7 +39,7 @@ class SizesViewController: UIViewController {
 }
 
 // MARK: - UITableview DataSource methods
-extension SizesViewController: UITableViewDataSource {
+extension SizesSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.getSizeList(selectedCoffeeType, coffeeStyles: styleSelectionList).count ?? 0
@@ -59,7 +59,7 @@ extension SizesViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableview Delegate methods
-extension SizesViewController: UITableViewDelegate {
+extension SizesSelectionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let animation = AnimationFactory.makeFadeAnimation(duration: 0.5, delayFactor: 0.05)
@@ -69,7 +69,7 @@ extension SizesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedCoffeeSize = selectedCoffeeType?.sizes[indexPath.row] {
-            let extraCollapsibleTVC = ExtrasCollapsibleTableViewController()
+            let extraCollapsibleTVC = ExtrasSelectionCollapsibleTableViewController()
             extraCollapsibleTVC.styleSelectionList = styleSelectionList
             extraCollapsibleTVC.selectedCoffeeType = selectedCoffeeType
             extraCollapsibleTVC.selectedCoffeeSize = selectedCoffeeSize

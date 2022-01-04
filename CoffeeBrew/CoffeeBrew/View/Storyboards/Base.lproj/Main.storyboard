@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="1813.0434782608697" y="139.95535714285714"/>
         </scene>
-        <!--Sizes View Controller-->
+        <!--Sizes Selection View Controller-->
         <scene sceneID="8au-GR-3su">
             <objects>
-                <viewController id="VTG-cc-Zk4" customClass="SizesViewController" customModule="CoffeeBrew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VTG-cc-Zk4" customClass="SizesSelectionViewController" customModule="CoffeeBrew" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mks-3o-And">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
