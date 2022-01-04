@@ -15,9 +15,9 @@ class StyleSelectionListTableViewCell: UITableViewCell, ReusableCell {
     @IBOutlet  var leadingConstraint: NSLayoutConstraint!
     
     // MARK: - UITableViewCell methods
-    func setData(_ styleSelectionListItem: CoffeeTypes?, images: [String: String]) {
-        nameLabel?.text = styleSelectionListItem?.name
-        if let img = images[styleSelectionListItem?.name ?? ""] {
+    func setData(_ selectedCoffeeType: CoffeeType?, images: [String: String]) {
+        nameLabel?.text = selectedCoffeeType?.name
+        if let img = images[selectedCoffeeType?.name ?? ""] {
             iconImageView?.isHidden = false
             iconImageView?.image = UIImage(named: img)
             leadingConstraint.constant = 19

@@ -10,7 +10,7 @@ import Foundation
 /// This is the data model for coffee style items
 public struct CoffeeStyleItem {
 
-    let types: [CoffeeTypes]
+    let types: [CoffeeType]
     let sizes: [CoffeeSizes]
     let extras: [Extras]
 
@@ -25,7 +25,7 @@ extension CoffeeStyleItem: Decodable {
 }
 
 /// This is the data model for CoffeeTypes
-public struct CoffeeTypes {
+public struct CoffeeType {
     
     let coffeeId: String
     let name: String
@@ -34,7 +34,7 @@ public struct CoffeeTypes {
 
 }
 
-extension CoffeeTypes: Decodable {
+extension CoffeeType: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case coffeeId = "_id"

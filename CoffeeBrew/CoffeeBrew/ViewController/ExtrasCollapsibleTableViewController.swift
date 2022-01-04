@@ -11,11 +11,14 @@ import UIKit
 class ExtrasCollapsibleTableViewController: UITableViewController {
 
     // MARK: - variable declaration
-    var coffeeTypes: CoffeeTypes?
+    var selectedCoffeeType: CoffeeType?
+    var selectedCoffeeSize: String?
     var styleSelectionList: CoffeeStyleItem?
     var viewModel: ExtrasViewModel?
     var extrasList = [[String: [String]]]()
     var sectionsData = [Section]()
+    var selectedExtras = Array<Dictionary<String, [Item]>>()
+    var selectedRows = [IndexPath: Bool]()
     
     // MARK: - UIViewController LifeCycle methods
     override func viewDidLoad() {
@@ -26,17 +29,11 @@ class ExtrasCollapsibleTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Brew with Lex", textColor: UIColor.black)
         viewModel = ExtrasViewModel()
-        guard let extrasList = viewModel?.getExtrasList(coffeeTypes, coffeeStyles: styleSelectionList) else {
+        guard let extrasList = viewModel?.getExtrasList(selectedCoffeeType, coffeeStyles: styleSelectionList) else {
             return
         }
         self.extrasList = extrasList
         sectionsData = viewModel?.getSections(self.extrasList) ?? [Section]()
-    }
-    
-    // MARK: - Utility methods
-    @objc func extraSelectionBtnPressed(sender: CustomButton) {
-        debugPrint("Button section \(sender.indexPath.section)")
-        debugPrint("Button row \(sender.indexPath.row)")
     }
 
     // MARK: - Table view data source
@@ -61,8 +58,16 @@ class ExtrasCollapsibleTableViewController: UITableViewController {
         if indexPath.section != 0 {
             let item: Item = sectionsData[indexPath.section-1].items[indexPath.row]
             
+            if let isSelected = selectedRows[indexPath] {
+                if isSelected {
+                    cell.selectButton.setImage(UIImage(named: "selected"), for: .selected)
+                } else {
+                    cell.selectButton.setImage(UIImage(named: "unselected"), for: .normal)
+                }
+            } else {
+                cell.selectButton.setImage(UIImage(named: "unselected"), for: .normal)
+            }
             cell.selectButton.indexPath = indexPath
-            cell.selectButton.addTarget(self, action: #selector(extraSelectionBtnPressed(sender:)), for: .touchUpInside)
             cell.nameLabel.text = item.name
         }
         return cell
@@ -98,6 +103,22 @@ class ExtrasCollapsibleTableViewController: UITableViewController {
         }
         
         return header
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentSelectedCell = tableView.cellForRow(at: indexPath) as? CollapsibleTableViewCell
+        if let isSelected = selectedRows[indexPath] {
+            if isSelected {
+                currentSelectedCell?.selectButton.setImage(UIImage(named: "unselected"), for: UIControl.State())
+                selectedRows[indexPath] = false
+            } else {
+                currentSelectedCell?.selectButton.setImage(UIImage(named: "selected"), for: UIControl.State())
+                selectedRows[indexPath] = true
+            }
+        } else {
+            currentSelectedCell?.selectButton.setImage(UIImage(named: "selected"), for: UIControl.State())
+            selectedRows[indexPath] = true
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

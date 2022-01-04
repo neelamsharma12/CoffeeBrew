@@ -43,9 +43,10 @@ class CollapsibleTableViewCell: UITableViewCell {
         // configure selectButton
         parentView.addSubview(selectButton)
         selectButton.translatesAutoresizingMaskIntoConstraints = false
+        selectButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        selectButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
         selectButton.centerYAnchor.constraint(equalTo: parentView.centerYAnchor).isActive = true
         selectButton.trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: -16).isActive = true
-        selectButton.setBackgroundImage(UIImage(named: "unselected"), for: UIControl.State())
     }
 
     required init?(coder aDecoder: NSCoder) {

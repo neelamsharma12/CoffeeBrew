@@ -14,7 +14,7 @@ class SizesViewController: UIViewController {
     @IBOutlet weak var sizeSelectionListTableView: UITableView!
     
     // MARK: - variable declaration
-    var coffeeTypes: CoffeeTypes?
+    var selectedCoffeeType: CoffeeType?
     var styleSelectionList: CoffeeStyleItem?
     var viewModel: SizeViewModel?
     
@@ -42,7 +42,7 @@ class SizesViewController: UIViewController {
 extension SizesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.getSizeList(coffeeTypes, coffeeStyles: styleSelectionList).count ?? 0
+        return viewModel?.getSizeList(selectedCoffeeType, coffeeStyles: styleSelectionList).count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,7 +51,7 @@ extension SizesViewController: UITableViewDataSource {
         }
         cell.selectionStyle = .none
         
-        let sizes = viewModel?.getSizeList(coffeeTypes, coffeeStyles: styleSelectionList)
+        let sizes = viewModel?.getSizeList(selectedCoffeeType, coffeeStyles: styleSelectionList)
         cell.setDataForSize(sizes?[indexPath.row], images: viewModel?.sizeSelectionImages)
         return cell
     }
@@ -68,10 +68,11 @@ extension SizesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let selectedCoffeeType = coffeeTypes {
+        if let selectedCoffeeSize = selectedCoffeeType?.sizes[indexPath.row] {
             let extraCollapsibleTVC = ExtrasCollapsibleTableViewController()
             extraCollapsibleTVC.styleSelectionList = styleSelectionList
-            extraCollapsibleTVC.coffeeTypes = selectedCoffeeType
+            extraCollapsibleTVC.selectedCoffeeType = selectedCoffeeType
+            extraCollapsibleTVC.selectedCoffeeSize = selectedCoffeeSize
             self.navigationController?.pushViewController(extraCollapsibleTVC, animated: true)
         }
     }

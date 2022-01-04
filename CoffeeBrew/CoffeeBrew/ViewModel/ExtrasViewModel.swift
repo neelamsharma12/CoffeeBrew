@@ -12,9 +12,9 @@ final class ExtrasViewModel {
 
     var extrasSelectionImages = ["Select the amount of sugar": "cappuchino", "Select type of milk": "milk"]
 
-    func getExtrasList(_ coffeeTypes: CoffeeTypes?, coffeeStyles: CoffeeStyleItem?) -> [[String: [String]]] {
+    func getExtrasList(_ coffeeType: CoffeeType?, coffeeStyles: CoffeeStyleItem?) -> [[String: [String]]] {
         var extrasWithValues = [[String: [String]]]()
-        if let extras = coffeeTypes?.extras, let extrasDict = convertCoffeeExtrasIntoDict(coffeeStyles?.extras) {
+        if let extras = coffeeType?.extras, let extrasDict = convertCoffeeExtrasIntoDict(coffeeStyles?.extras) {
             for id in extras {
                 if let name = extrasDict[id] {
                     extrasWithValues += convertExtraArrayIntoDictionary(extras: name)

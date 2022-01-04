@@ -12,9 +12,9 @@ final class SizeViewModel {
 
     var sizeSelectionImages = ["Large": "large", "Venti": "small", "Tall": "medium"]
 
-    func getSizeList(_ coffeeTypes: CoffeeTypes?, coffeeStyles: CoffeeStyleItem?) -> [String] {
+    func getSizeList(_ coffeeType: CoffeeType?, coffeeStyles: CoffeeStyleItem?) -> [String] {
         var coffeeSizes = [String]()
-        if let sizes = coffeeTypes?.sizes, let coffeeSizeDict = convertCoffeeSizesIntoDict(coffeeStyles?.sizes) {
+        if let sizes = coffeeType?.sizes, let coffeeSizeDict = convertCoffeeSizesIntoDict(coffeeStyles?.sizes) {
             for id in sizes {
                 if let name = coffeeSizeDict[id] {
                     if !coffeeSizes.contains(name) {

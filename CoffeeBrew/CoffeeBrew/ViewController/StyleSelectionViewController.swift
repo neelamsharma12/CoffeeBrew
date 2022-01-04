@@ -38,14 +38,14 @@ class StyleSelectionViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSizeSelection" {
-            guard let coffeeTypes = sender as? CoffeeTypes, let selectedStyles = viewModel?.styleSelectionList else {
+            guard let coffeeTypes = sender as? CoffeeType, let selectedStyles = viewModel?.styleSelectionList else {
                 return
             }
             guard let destinationViewController = segue.destination as? SizesViewController else {
                 return
             }
             destinationViewController.styleSelectionList = selectedStyles
-            destinationViewController.coffeeTypes = coffeeTypes
+            destinationViewController.selectedCoffeeType = coffeeTypes
         }
     }
 

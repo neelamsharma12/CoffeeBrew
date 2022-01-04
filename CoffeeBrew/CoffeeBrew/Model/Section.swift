@@ -21,6 +21,12 @@ public struct Item {
 
 }
 
+extension Item: Equatable, Hashable {
+    public static func ==(lhs: Item, rhs: Item) -> Bool {
+        return lhs.name == rhs.name && lhs.detail == rhs.detail
+    }
+}
+
 public struct Section {
 
     var name: String
