@@ -19,6 +19,8 @@
 		AE45ADD92784487C00103F94 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45ADD82784487C00103F94 /* MockData.swift */; };
 		AE45ADDB27844E4900103F94 /* SizeSelectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45ADDA27844E4900103F94 /* SizeSelectionViewModelTests.swift */; };
 		AE45ADDD2784530F00103F94 /* ExtrasSelectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45ADDC2784530F00103F94 /* ExtrasSelectionViewModelTests.swift */; };
+		AE45ADDF2784AED300103F94 /* OverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45ADDE2784AED300103F94 /* OverviewTableViewController.swift */; };
+		AE45ADE1278598BB00103F94 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE45ADE0278598BB00103F94 /* OverviewViewModel.swift */; };
 		AE59D932277D91F7009BFCE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D931277D91F7009BFCE4 /* AppDelegate.swift */; };
 		AE59D934277D91F7009BFCE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D933277D91F7009BFCE4 /* SceneDelegate.swift */; };
 		AE59D936277D91F7009BFCE4 /* StartUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59D935277D91F7009BFCE4 /* StartUpViewController.swift */; };
@@ -82,6 +84,8 @@
 		AE45ADD82784487C00103F94 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		AE45ADDA27844E4900103F94 /* SizeSelectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeSelectionViewModelTests.swift; sourceTree = "<group>"; };
 		AE45ADDC2784530F00103F94 /* ExtrasSelectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasSelectionViewModelTests.swift; sourceTree = "<group>"; };
+		AE45ADDE2784AED300103F94 /* OverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewController.swift; sourceTree = "<group>"; };
+		AE45ADE0278598BB00103F94 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		AE59D92E277D91F7009BFCE4 /* CoffeeBrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeBrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE59D931277D91F7009BFCE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE59D933277D91F7009BFCE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				AE59D968277E1611009BFCE4 /* StyleSelectionViewController.swift */,
 				AE59D991277F456C009BFCE4 /* SizesSelectionViewController.swift */,
 				AE59D99927818037009BFCE4 /* ExtrasSelectionCollapsibleTableViewController.swift */,
+				AE45ADDE2784AED300103F94 /* OverviewTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				AE59D96B277E3381009BFCE4 /* StyleSelectionViewModel.swift */,
 				AE59D993277F4F08009BFCE4 /* SizeSelectionViewModel.swift */,
 				AE59D997277F6D45009BFCE4 /* ExtrasSelectionViewModel.swift */,
+				AE45ADE0278598BB00103F94 /* OverviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -554,11 +560,13 @@
 				AE59D9A22781850F009BFCE4 /* CollapsibleTableViewCell.swift in Sources */,
 				AE59D99F278184AE009BFCE4 /* CollapsibleTableViewHeader.swift in Sources */,
 				AE59D970277E3519009BFCE4 /* Endpoint.swift in Sources */,
+				AE45ADE1278598BB00103F94 /* OverviewViewModel.swift in Sources */,
 				AE59D936277D91F7009BFCE4 /* StartUpViewController.swift in Sources */,
 				AE59D967277D9BD4009BFCE4 /* CustomizeNavBar.swift in Sources */,
 				AE59D99A27818037009BFCE4 /* ExtrasSelectionCollapsibleTableViewController.swift in Sources */,
 				AE59D990277F3D00009BFCE4 /* Animator.swift in Sources */,
 				AE59D998277F6D45009BFCE4 /* ExtrasSelectionViewModel.swift in Sources */,
+				AE45ADDF2784AED300103F94 /* OverviewTableViewController.swift in Sources */,
 				AE59D988277F0E41009BFCE4 /* StyleSelectionListTableViewCell.swift in Sources */,
 				AE59D932277D91F7009BFCE4 /* AppDelegate.swift in Sources */,
 				AE59D992277F456C009BFCE4 /* SizesSelectionViewController.swift in Sources */,

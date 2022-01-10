@@ -34,7 +34,6 @@ class CollapsibleTableViewCell: UITableViewCell {
         parentView.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: 16).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: 64).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: parentView.centerYAnchor).isActive = true
         nameLabel.numberOfLines = 0
         nameLabel.textColor = UIColor.white

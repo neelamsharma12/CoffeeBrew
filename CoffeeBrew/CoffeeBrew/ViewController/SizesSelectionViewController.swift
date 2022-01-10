@@ -72,7 +72,7 @@ extension SizesSelectionViewController: UITableViewDelegate {
             let extraCollapsibleTVC = ExtrasSelectionCollapsibleTableViewController()
             extraCollapsibleTVC.styleSelectionList = styleSelectionList
             extraCollapsibleTVC.selectedCoffeeType = selectedCoffeeType
-            extraCollapsibleTVC.selectedCoffeeSize = selectedCoffeeSize
+            extraCollapsibleTVC.selectedCoffeeSize = viewModel?.getSizeName(styleSelectionList, coffeeSizeId: selectedCoffeeSize)
             self.navigationController?.pushViewController(extraCollapsibleTVC, animated: true)
         }
     }

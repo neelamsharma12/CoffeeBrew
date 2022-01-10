@@ -36,4 +36,16 @@ final class SizeSelectionViewModel {
         }
         return coffeeSizeDict
     }
+    
+    func getSizeName(_ coffeeStyles: CoffeeStyleItem?, coffeeSizeId: String) -> String?  {
+        guard let coffeeStyles = coffeeStyles else {
+            return nil
+        }
+        for size in coffeeStyles.sizes {
+            if size.id == coffeeSizeId {
+                return size.name
+            }
+        }
+        return nil
+    }
 }

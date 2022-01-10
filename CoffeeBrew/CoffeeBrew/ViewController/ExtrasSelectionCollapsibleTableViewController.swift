@@ -17,8 +17,7 @@ final class ExtrasSelectionCollapsibleTableViewController: UITableViewController
     var viewModel: ExtrasSelectionViewModel?
     var extrasList = [[String: [String]]]()
     var sectionsData = [Section]()
-    var selectedExtras = Array<Dictionary<String, [Item]>>()
-    var selectedRows = [IndexPath: Bool]()
+    var selectedExtrasIndexPath = [IndexPath: Bool]()
     
     // MARK: - UIViewController LifeCycle methods
     override func viewDidLoad() {
@@ -27,13 +26,37 @@ final class ExtrasSelectionCollapsibleTableViewController: UITableViewController
         tableView.estimatedRowHeight = 94.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        tableView.isScrollEnabled = false
+        addRightBarButton()
         CustomizeNavBar().setLeftAlignTitleView(controller: self, font: UIFont(name: "Avenir Next Bold", size: 16), text: "Brew with Lex", textColor: UIColor.black)
         viewModel = ExtrasSelectionViewModel()
+        getSectionsData()
+    }
+
+    // MARK: - Utitlity methods
+    
+    private func addRightBarButton() {
+        let rightBarButtonItem = UIBarButtonItem(title: "Overview", style: .plain, target: self, action: #selector(addTapped))
+        rightBarButtonItem.tintColor = UIColor.black
+        rightBarButtonItem.setTitleTextAttributes([ NSAttributedString.Key.font: UIFont(name: "Avenir Next Bold", size: 14)!], for: UIControl.State.normal)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    private func getSectionsData() {
         guard let extrasList = viewModel?.getExtrasList(selectedCoffeeType, coffeeStyles: styleSelectionList) else {
             return
         }
         self.extrasList = extrasList
         sectionsData = viewModel?.getSections(self.extrasList) ?? [Section]()
+    }
+
+    @objc func addTapped(_ sender: UIButton) {
+        let overviewTVC = OverviewTableViewController()
+        overviewTVC.selectedCoffeeType = selectedCoffeeType
+        overviewTVC.selectedCoffeeSize = selectedCoffeeSize
+        overviewTVC.extrasList = extrasList
+        overviewTVC.selectedExtrasIndexPath = selectedExtrasIndexPath
+        self.navigationController?.pushViewController(overviewTVC, animated: true)
     }
 
     // MARK: - Table view data source
@@ -58,7 +81,7 @@ final class ExtrasSelectionCollapsibleTableViewController: UITableViewController
         if indexPath.section != 0 {
             let item: Item = sectionsData[indexPath.section-1].items[indexPath.row]
             
-            if let isSelected = selectedRows[indexPath] {
+            if let isSelected = selectedExtrasIndexPath[indexPath] {
                 if isSelected {
                     cell.selectButton.setImage(UIImage(named: "selected"), for: .selected)
                 } else {
@@ -107,17 +130,17 @@ final class ExtrasSelectionCollapsibleTableViewController: UITableViewController
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentSelectedCell = tableView.cellForRow(at: indexPath) as? CollapsibleTableViewCell
-        if let isSelected = selectedRows[indexPath] {
+        if let isSelected = selectedExtrasIndexPath[indexPath] {
             if isSelected {
                 currentSelectedCell?.selectButton.setImage(UIImage(named: "unselected"), for: UIControl.State())
-                selectedRows[indexPath] = false
+                selectedExtrasIndexPath[indexPath] = false
             } else {
                 currentSelectedCell?.selectButton.setImage(UIImage(named: "selected"), for: UIControl.State())
-                selectedRows[indexPath] = true
+                selectedExtrasIndexPath[indexPath] = true
             }
         } else {
             currentSelectedCell?.selectButton.setImage(UIImage(named: "selected"), for: UIControl.State())
-            selectedRows[indexPath] = true
+            selectedExtrasIndexPath[indexPath] = true
         }
     }
     
